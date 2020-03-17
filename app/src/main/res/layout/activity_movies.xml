@@ -9,6 +9,8 @@
 
     <include layout="@layout/progress_bar" />
 
+    <include layout="@layout/button_load_movies" />
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

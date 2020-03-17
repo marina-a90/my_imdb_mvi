@@ -5,8 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.movies.MoviesFragment">
 
-    <include layout="@layout/button_load_movies" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:scrollbars="vertical"
