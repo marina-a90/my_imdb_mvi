@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.example.movies_mvi.api.RetrofitBuilder
 import com.example.movies_mvi.model.Movie
 import com.example.movies_mvi.repository.movies.Repository
 import com.example.movies_mvi.ui.movies.state.MainStateEvent

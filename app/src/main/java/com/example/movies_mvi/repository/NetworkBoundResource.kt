@@ -2,7 +2,6 @@ package com.example.movies_mvi.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.example.movies_mvi.model.Movie
 import com.example.movies_mvi.util.*
 import kotlinx.coroutines.*
 
@@ -41,7 +40,6 @@ abstract class NetworkBoundResource<ResponseObject, ViewStateType> {
                 handleApiSuccessResponse(response)
             }
             is ApiErrorResponse ->{
-                // expect to get an error at this point
                 println("DEBUG: NetworkBoundResource: ${response.errorMessage}")
                 onReturnError(response.errorMessage)
             }

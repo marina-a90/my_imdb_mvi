@@ -19,6 +19,10 @@ data class MoviesResponse (
     private val results: List<Movie> = ArrayList()
     )
 {
+    fun getMovies(): List<Movie> {
+        return results
+    }
+
     override fun toString(): String {
         return "MoviesResponse(\n page=$page,\n total results=$totalResults,\n total pages=$totalPages,\n results=$results)"
     }
