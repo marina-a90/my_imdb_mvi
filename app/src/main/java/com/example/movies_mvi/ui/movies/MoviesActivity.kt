@@ -21,7 +21,6 @@ class MoviesActivity : AppCompatActivity(), DataStateListener {
 
     lateinit var viewModel: MainViewModel
     private lateinit var dataStateHandler: DataStateListener
-    private lateinit var moviesAdapter: MoviesListRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +30,9 @@ class MoviesActivity : AppCompatActivity(), DataStateListener {
 
         showMoviesFragment()
 
-        subscribeObservers()
-
         setDataStateHandler()
+
+        subscribeObservers()
 
         button_load_movies.setOnClickListener {
             Log.d(TAG, "clicked on button")
@@ -55,7 +54,6 @@ class MoviesActivity : AppCompatActivity(), DataStateListener {
 
     private fun subscribeObservers() {
         viewModel.dataState.observe(this, Observer { dataState ->
-            Log.d(TAG, "DataState: $dataState")
 
             // Handle Loading and Message
             dataStateHandler.onDataStateChange(dataState)
@@ -71,14 +69,6 @@ class MoviesActivity : AppCompatActivity(), DataStateListener {
                     }
                 }
 
-            }
-        })
-
-        viewModel.viewState.observe(this, Observer {viewState ->
-            viewState.movies?.let { movies ->
-                // set BlogPosts to RecyclerView
-                println("DEBUG: Setting movies to RecyclerView: $viewState.movies")
-                moviesAdapter.submitList(movies)
             }
         })
     }

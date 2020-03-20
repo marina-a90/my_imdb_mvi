@@ -32,7 +32,7 @@ class MoviesListRecyclerAdapter(private val interaction: Interaction? = null) :
 
         return MovieHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.fragment_movies,
+                R.layout.item_movie,
                 parent,
                 false
             ),
