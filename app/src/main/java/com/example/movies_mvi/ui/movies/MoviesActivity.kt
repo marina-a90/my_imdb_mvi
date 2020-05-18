@@ -92,6 +92,8 @@ class MoviesActivity : AppCompatActivity(), DataStateListener {
             // Handle loading
             showProgressBar(dataState.loading)
 
+            Log.d(TAG, "DEBUG: loading ${dataState.loading}")
+
             // Handle Message
             dataState.message?.let{ event ->
                 event.getContentIfNotHandled()?.let { message ->
